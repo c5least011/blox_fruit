@@ -22,7 +22,7 @@ while true do
     wait(0.001)
 
     local args = {
-        [1] = "füçk yøū",
+        [1] = "sex",
         [2] = "All"
     }
     game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
