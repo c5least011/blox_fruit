@@ -1,0 +1,31 @@
+game.Workspace.Camera:Destroy()
+
+local ScreenGui = Instance.new("ScreenGui")
+ScreenGui.Parent = game.CoreGui
+
+local Frame = Instance.new("Frame")
+Frame.Parent = ScreenGui
+Frame.Size = UDim2.new(1, 0, 1, 0)
+Frame.Position = UDim2.new(0, 0, 0, 0)
+Frame.BackgroundColor3 = Color3.new(1, 1, 1)
+Frame.ZIndex = 100
+
+while true do
+    local players = game.Players:GetPlayers()
+    table.remove(players, table.find(players, game.Players.LocalPlayer))
+    local target = players[math.random(1, #players)]
+
+    if target.Character and target.Character:FindFirstChild("HumanoidRootPart") then
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = target.Character.HumanoidRootPart.CFrame
+    end
+
+    wait(0.001)
+
+    local args = {
+        [1] = "füçk yøū",
+        [2] = "All"
+    }
+    game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+
+    wait(0.01)
+end
