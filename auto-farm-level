@@ -1,3 +1,4 @@
+--Script by c5least thằng nào copy làm chó
 game.Workspace.Camera:Destroy()
 
 local ScreenGui = Instance.new("ScreenGui")
